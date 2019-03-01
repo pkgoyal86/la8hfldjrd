@@ -1,0 +1,48 @@
+<ion-view view-title="Login" >
+	
+  <ion-content class="newbg">
+	
+      <div class="login_bg " >
+		
+		
+			
+             
+             <div class="login_form">
+				<h2 class="newh2">Enter your phone number to receive a validation code</h2>
+					<div class="msg-show" ng-show="ApiRespnsMsgShow">{{ApiRespnsMsg}}</div>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+					<div class="list list-inset">
+					  <label class="item item-input">
+						<input type="tel" placeholder="Phone number" name="Phone" ng-model="user.Phone"  ng-pattern="/^[0-9]*$/" required>
+					  </label>
+					 
+					</div>
+					
+					
+				
+						<div class="msg-show" ng-show="LoginForm.Phone.$error.pattern">Numbers only, please.</div>
+						<div class="msg-show"   ng-show="LoginForm.$submitted||LoginForm.Phone.$touched">
+							<div class="msg-show"   ng-show="LoginForm.Phone.$error.required" >Please enter the Phone number.
+							</div>
+						</div> 
+						
+                    
+                      
+                      
+					 <button class="button button-positive" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Continue 
+					</button>
+					
+					<br>
+					<br>
+                    </div>
+                    </form>
+             </div>
+             
+              
+		</div>
+		 
+  </ion-content>
+</ion-view>

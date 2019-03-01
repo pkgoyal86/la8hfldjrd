@@ -1,0 +1,63 @@
+<ion-view view-title="Add Product" >
+	
+  <ion-content class="newbg">
+	
+      <div class="login_bg " >
+		
+		
+			
+             
+            <div class="login_form" style="margin-top:10%">
+			<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+				<div class="list card">
+
+				  
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Unique Id / Product Code *</span>
+						<input type="text" ng-model="user.unique_id" name="unique_id" placeholder="S145645" required>
+						<div  ng-show="LoginForm.$submitted||LoginForm.unique_id.$touched">
+							<div class="msg-show"  ng-show="LoginForm.unique_id.$error.required" >Product Code can't be empty.</div>
+						</div>
+					</label>
+					 
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Title *</span>
+						<input type="text" ng-model="user.title" name="title" placeholder="Title" required>
+						<div  ng-show="LoginForm.$submitted||LoginForm.title.$touched">
+							<div class="msg-show"  ng-show="LoginForm.title.$error.required" >Title can't be empty.</div>
+						</div>
+					</label>
+					   
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Location in warehouse *</span>
+						<input type="text" ng-model="user.location" name="location" placeholder="Location" required>
+					
+						<div  ng-show="LoginForm.$submitted||LoginForm.location.$touched">
+							<div class="msg-show"  ng-show="LoginForm.location.$error.required" >Location can't be empty.</div>
+						</div>
+					</label>
+						
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Quantity</span>
+						<input type="number" ng-model="user.quantity" placeholder="Quantity">
+					</label>
+					 
+					
+					<button class="button button-assertive" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Save 
+					</button>
+				 
+
+				 
+				
+				</div>
+			</form>	
+				
+				  
+			</div>		
+             
+              
+		</div>
+		 
+  </ion-content>
+</ion-view>

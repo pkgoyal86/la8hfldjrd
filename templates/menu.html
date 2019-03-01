@@ -1,0 +1,56 @@
+<ion-side-menus enable-menu-with-back-views="false" >
+  <ion-side-menu-content>
+    <ion-nav-bar class="bg_header" align-title="center" >
+       
+      <ion-nav-buttons side="left">
+		<div class="bar bar-header ">
+		  <button class="button icon ion-arrow-left-a" ng-click="goBack()"  ng-show="backbuttonshow" ></button>
+			   <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="display:block">
+        </button>  
+		     
+			 
+		   
+		</div>
+		
+		 
+        
+      </ion-nav-buttons>
+	 
+    </ion-nav-bar>
+	
+	<!-- <div class="tabs tabs-icon-top footer_tab {{$root.hideTabs}}"  >
+	   <a class = "tab-item active footab"  href="#/app/home">
+		 <img src="img/home_icon.png"/>
+		 <span> HOME</span>  
+	   </a>
+		
+	   <a class = "tab-item footab"  href="#/app/vote">
+		   <img src="img/rate_icon.png"/>
+		   <span>RATE</span>
+	   </a>
+		
+	   <a class = "tab-item footab" href="#/app/subject">
+		   <img src="img/detail_icon.png"/>
+		  <span> DETAIL</span>
+	   </a>
+		
+	 </div>
+	 -->
+	 
+    <ion-nav-view name="menuContent"></ion-nav-view>
+	<!-- <div ng-hide="show_foot" class="tabs tabs-icon-top footer_tab hide-on-keyboard-open" ng-include="'templates/footer.html'"  ></div> -->
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" align-title="center">
+    <ion-header-bar class="custom" align-title="center">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+	
+    <ion-content class="custom">
+	<div ng-include="'templates/left_menu_after_login.html'" ng-show="$root.left_menu_after_login" ></div>
+	<div ng-include="'templates/left_menu_without_login.html'" ng-show="$root.left_menu_without_login" ></div> 
+	
+    </ion-content>
+  </ion-side-menu>
+  
+</ion-side-menus>

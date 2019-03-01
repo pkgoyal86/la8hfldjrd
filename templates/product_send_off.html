@@ -1,0 +1,41 @@
+<ion-view view-title="Product Send Off" >
+	
+  <ion-content class="">
+	
+      <div class="login_bg ">
+			<button class="button button-full button-calm" ng-if="$index == 0" ng-repeat="value in data">
+			Title : {{value.Product.title}}
+			</button>
+		
+			
+            <p style="text-align: center;color: tomato;">Please enter quantity of product which are deducting from total quantity.</p> 
+			<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+            <div class="m_table" style="padding:10px">
+						<table>
+						  <tr>
+							<th width="50%">Location </th>
+							<th width="25%">Quantity</th>
+							<th width="25%">Number</th>
+							
+						  </tr>
+						  <tr ng-repeat="value in data">
+							<td valign="top">{{value.Product.location}}</td>
+							<td>{{value.Product.quantity}}</td>
+							<td style="padding:5px 0px 0px 5px"><input name="item_a[]" ng-model="user[value.Product.id]" type="number" class="deduct_item_qunatity" ></td>
+							
+						  </tr>
+						  
+						</table>
+					</div>
+				  
+
+				
+				
+				<div class="login_form" style="margin-top:1%">  
+					<button class="button button-assertive" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+						Update 
+					</button>
+				</div>
+			</form>		
+  </ion-content>
+</ion-view>

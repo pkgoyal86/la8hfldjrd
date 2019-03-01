@@ -1,0 +1,143 @@
+<ion-view view-title="Lawn Info" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="step_3_form lawn_form" style="margin-top:15%">
+					<h2 class="h2heading">Please enter Lawn detail.</h2>
+					<h3 class="h2heading">Total area = <span id="toal_area" >{{user.total_area}}</span></h3>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					
+					<ul class = "list">
+					   <li class = "item item-toggle" style="color: #fff;">
+						  Access issue (Less then 85CM)
+						  <label class = "toggle toggle-assertive" >
+							 <input type = "checkbox" ng-model="user.Area.big_machine_issue" />
+							 <div class = "track">
+								<div class = "handle"></div>
+							 </div>
+						  </label>
+					   </li>
+
+					</ul>
+					
+					<div class="list card" ng-repeat="n in [] | range:11">
+
+							  <div class="item plan_{{value.id}}">
+								
+								<h2 style="font-size: 18px;
+
+font-weight: bold;">Area {{n}}</h2>
+								
+							  </div>
+
+							  
+								<table width="100%">
+									<tr>
+										<th width="40%" >Name</th>
+										<th ><input name="area_{{n}}_name" ng-model="user.Area[n].area_name" id="area_{{n}}_name" type="text" class="" value="{{n}}" ng-keyup="calculateTotalArea();autocheck(n)" ></th>
+									</tr>	
+									<tr>
+										<th >Lenght(m)</th>
+										<th><input name="lenght_{{n}}" id="lenght_{{n}}"  ng-model="user.Area[n].lenght" type="number" class="" ng-keyup="calculateTotalArea();autocheck(n)" value="0" > </th>
+									</tr>
+									<tr>
+										<th >width(m)</th>
+										<th><input name="width_{{n}}" ng-model="user.Area[n].width" id="width_{{n}}" type="number" class="" ng-keyup="calculateTotalArea();autocheck(n)" value="0" ></th>
+									</tr>
+									<tr>
+										<th >Area(m<sup>2</sup>)</th>
+										<th> <span id="area_{{n}}" ng-if="user.Area[n].width > 0 && user.Area[n].lenght > 0">{{user.Area[n].lenght*user.Area[n].width}}</span></th>
+									</tr>
+									
+									<tr>
+										<th >To be treated</th>
+										<th> 
+										<!-- <a style="float:left;font-size:20px" ng-model="user.Area[n].calculate"   id="area_{{n}}_calculate" ng-click="tickuntck(n)" type="text" class="deduct_item_qunatity" value="" style=""></a> -->
+										<!-- <input id="area_{{n}}_calculate"  ng-click="tickuntck(n)" type="checkbox" ng-model="user.Area[n].calculate"> -->
+										
+
+										<!-- <ion-checkbox ng-change="tickuntck(n)" ng-model="user.Area[n].calculate" ></ion-checkbox style="margin-left:-10px"> -->
+										
+										<label class = "checkbox">
+										   <input id="area_{{n}}_calculate" type = "checkbox" ng-click="tickuntck(n)" ng-model="user.Area[n].calculate">
+										</label>
+
+						
+						
+										</th>
+									</tr>
+									
+									
+									
+									</table>
+						</div>
+					
+					<!-- <div class="m_table" >
+						<table>
+						  <tr>
+							<th width="25%">Name</th>
+							<th width="20%">Lenght(m)</th>
+							<th width="20%">width(m)</th>
+							<th >Area(m<sup>2</sup>)</th>
+							<th >Should cound</th>
+							
+						  </tr>
+						  
+						  <tr   ng-repeat="n in [] | range:11">
+							<td class="td_{{n}}" valign="top">
+								
+							
+								
+								
+								<input name="area_{{n}}_name" ng-model="user.Area[n].area_name" id="area_{{n}}_name" type="text" class="deduct_item_qunatity" value="{{n}}" ng-keyup="calculateTotalArea();autocheck(n)" style="float:left;width:75px;" >
+								
+							</td>
+							<td class="td_{{n}}" valign="top"><input name="lenght_{{n}}" id="lenght_{{n}}"  ng-model="user.Area[n].lenght" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea();autocheck(n)" value="0" > 
+							</td>
+							<td class="td_{{n}}"><input name="width_{{n}}" ng-model="user.Area[n].width" id="width_{{n}}" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea();autocheck(n)" value="0" > </td>
+							
+							<td class="td_{{n}}" style="padding:5px 0px 0px 5px" ><span id="area_{{n}}" ng-if="user.Area[n].width > 0 && user.Area[n].lenght > 0">{{user.Area[n].lenght*user.Area[n].width}}</span></td>
+							<td class="td_{{n}}" style="padding:5px 0px 0px 5px" >
+								
+								<a style="float:left" ng-model="user.Area[n].calculate"   id="area_{{n}}_calculate" ng-click="tickuntck(n)" type="text" class="deduct_item_qunatity" value="" style="float:right;width:75px;border:none">
+									
+								</a>
+							</td>
+							
+						  </tr>
+						  
+						  
+						  
+						   
+
+						   
+						  <tr >
+							<td valign="top" colspan="4">Total Area</td>
+							
+							<td style="padding:5px 0px 0px 5px"><span id="toal_area" >{{user.total_area}}</span></td>
+							
+						  </tr>
+						  
+						  
+						  
+						</table>
+					</div> -->
+					<button class="button button-assertive fullwd" ng-click="submitData()">
+							Submit 
+					</button>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>

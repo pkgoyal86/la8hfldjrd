@@ -1,0 +1,77 @@
+<ion-view view-title="Your Detail" >
+	
+  <ion-content class="newbg">
+	
+      <div class="login_bg ">
+		
+		
+			
+             
+             <div class="login_form">
+				<h2 class="newh2">Choose your username and password</h2>
+					<div class="msg-show" ng-show="ApiRespnsMsgShow">{{ApiRespnsMsg}}</div>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+					 
+					<!--- -->	
+                    <div class="list list-inset">
+					  <label class="item item-input">
+						<input type="text" placeholder="UserName" name="UserName" ng-model="user.UserName"  ng-pattern="/^[a-zA-Z0-9]*$/" required>
+					  </label>
+					 
+					</div>
+					
+					<div class="msg-show" ng-show="LoginForm.UserName.$error.pattern">Alphanumeric only, please.</div>
+					<div class="msg-show"   ng-show="LoginForm.$submitted||LoginForm.UserName.$touched">
+						<div class="msg-show"   ng-show="LoginForm.UserName.$error.required" >Please choose username.
+						</div>
+					</div>
+					<!--- -->
+					
+                    <!--- -->	
+					<div class="list list-inset">
+					  <label class="item item-input">
+						
+						<input type="password" placeholder="Password" name="Password" ng-model="user.Password"  ng-minlength="8" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" required />
+					  </label>
+					 
+					</div>
+					
+					<div class="error" ng-show="LoginForm.$submitted||LoginForm.Password.$touched">
+							<div class="sub-error msg-show" ng-show="LoginForm.Password.$error.required" > Password is required.</div>
+							<div class="sub-error msg-show" ng-show="LoginForm.Password.$error.minlength" >Your password should be a minimum of 8 characters.</div>
+							<div class="msg-show" ng-show="LoginForm.Password.$error.pattern">Password should contain one number,one character and one special character.</div>
+					</div>	
+                    <!--- -->
+					
+					<!--- -->	
+					<div class="list list-inset">
+					  <label class="item item-input">
+						
+						<input type="password" placeholder="Confirm Password" name="cpassword" ng-model="user.cpassword" ng-minlength="8" required />
+					  </label>
+					 
+					</div>
+					
+					<div class="error" ng-show="LoginForm.cpassword.$touched">
+							<div class="msg-show"  ng-show="LoginForm.cpassword.$error.required" >Please enter your confirm password.</div>
+							<div class="msg-show"  ng-show="LoginForm.cpassword.$viewValue!=LoginForm.Password.$viewValue" >Oops! Both passwords should be the same.</div>
+						</div>	
+                    <!--- -->
+					
+					 <button class="button button-positive" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Continue 
+					</button>
+					
+					<br>
+					<br>
+                    </div>
+                    </form>
+             </div>
+             
+              
+		</div>
+		 
+  </ion-content>
+</ion-view>

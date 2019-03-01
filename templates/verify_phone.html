@@ -1,0 +1,63 @@
+<ion-view view-title="Verify Phone" >
+  <ion-content class="newbg">
+  <div class="login_bg nobg" >
+            
+             <div class="login_form">
+				<div class="msg-show" ng-show="codesuccess">{{codesuccessMsg}}</div>
+				
+				<h2 class="newh2">Enter validation code</h2> 
+	
+				<form name="CodeForm" id="CodeForm" novalidate ng-submit="CodeForm.$valid">
+					<div class="verify_code">
+						<div class="verify_code_inner">
+							<table width="100%">
+								<tr>
+									<td>
+										<input ng-keyup="moveFocus(2)" id="phone_number_code1" ng-model="user.phone_number_code1" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required/>
+										
+									</td>
+									<td>
+										<input ng-keyup="moveFocus(3)" id="phone_number_code2" ng-model="user.phone_number_code2" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required/>
+										
+									</td>
+									<td>
+										<input ng-keyup="moveFocus(4)" id="phone_number_code3" ng-model="user.phone_number_code3" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required/>
+										
+									</td>
+									<td>
+										<input ng-model="user.phone_number_code4"  id="phone_number_code4" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required/>
+										
+									</td>
+								</tr>
+							</table>
+						</div>
+					  
+					
+					  
+					</div>
+                   
+					<br>
+					<br>
+					<br>
+						
+					<button class="button button-positive" ng-click="verifycode()" ng-disabled="CodeForm.$invalid">
+							Continue 
+					</button>	
+						
+						
+						
+						 
+						
+						
+                      
+						
+						
+                    
+                    </form>
+             </div>
+             
+              
+			 </div>
+  </ion-content>
+  
+</ion-view>

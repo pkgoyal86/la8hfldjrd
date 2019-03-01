@@ -1,0 +1,50 @@
+<ion-view view-title="Login" >
+	
+  <ion-content class="globebg">
+      <div class="login_bg openasiphone" ng-controller="loginCtrl">
+             
+			
+			 <div class="login_form" style="margin-top:40%">
+					
+					<div class="msg-show" ng-show="ApiRespnsMsgShow">{{ApiRespnsMsg}}</div>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+						
+						
+						
+                    
+                       <label class="item item-input">
+                       <i class="icon ion-ios-person"></i>
+                        <input type="email" placeholder="Email" ng-model="user.email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+                      </label>
+					   <div  ng-show="LoginForm.$submitted||LoginForm.email.$touched">
+							  <div class="msg-show"  ng-show="LoginForm.email.$error.required" >Please enter your email to log in.</div>
+							  <div class="msg-show"  ng-show="LoginForm.email.$error.email" >Hmmm. This doesn't look like an email address. Can you check again?</div>
+						</div>
+                      <label class="item item-input">
+                        <i class="icon ion-ios-locked"></i>
+                        <input type="password" placeholder="Password" name="password" ng-model="user.password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required />
+                      </label>
+					   <div class="error msg-show" ng-show="LoginForm.$submitted||LoginForm.password.$touched">
+						  <div class="sub-error msg-show" ng-show="LoginForm.password.$error.required" >Please enter your password to log in.</div>
+					</div> 
+					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Login 
+					</button>
+					
+                    </div>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+             
+              
+		
+		 
+  </ion-content>
+</ion-view>

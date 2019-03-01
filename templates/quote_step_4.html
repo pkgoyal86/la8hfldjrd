@@ -1,0 +1,51 @@
+<ion-view view-title="Lawn Details" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="login_form lawnconditio lawnconditionolabelborder" style="margin-top:15%">
+					<h2 class="h2heading">Please Select lawn condition.</h2>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					
+					
+						
+						
+							<!-- <div class="list maindiv" ng-repeat="value in data">
+								<p>
+									{{value.name}} :  {{user.range[value.id]}}
+								</p>
+								  <div class="item range range-positive">
+									<span>1</span>
+									<input type="range"  ng-model="user.range[value.id]" name="{{value.name}}" min="1" max="10" value="5">
+									<span>10</span>
+								  </div>
+							</div> -->
+                    
+						<ion-list>
+
+						  <ion-checkbox ng-change="print()" ng-model="user.lawn_conditions[value.id]" ng-repeat="value in data">{{value.name}} </ion-checkbox>
+						 
+
+						</ion-list>
+					  
+                      
+					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Submit 
+					</button>
+					
+                   
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>

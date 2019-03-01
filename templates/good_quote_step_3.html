@@ -1,0 +1,144 @@
+<ion-view view-title="Lawn Info" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="login_form lawn_form" style="margin-top:15%">
+					<h2 class="h2heading">Please enter Lawn detail.</h2>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="m_table" >
+						<table>
+						  <tr>
+							<th width="30%">Name</th>
+							<th width="20%">Lenght(m)</th>
+							<th width="20%">width(m)</th>
+							<th width="30%">Area(m<sup>2</sup>)</th>
+							
+						  </tr>
+						  
+						  <tr ng-repeat="n in [] | range:10">
+							<td valign="top">
+								<input name="area_{{n}}_name" ng-model="user.Area[n].area_name" id="area_1_name" type="text" class="deduct_item_qunatity" value="{{n}}" style="float:left" >
+								<input style="visibility:hidden;float:right" type="checkbox" class="calculate_area_checkbox" name="area_1_calculate" ng-model="area_1_calculate" id="area_1_calculate">
+							
+							</td>
+							<td valign="top"><input name="lenght_1" id="lenght_1"  ng-model="user.Area[n].lenght" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="width_1" ng-model="width_1" id="width_1" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							
+							<td style="padding:5px 0px 0px 5px" ><span id="area_1" ng-model="area_1" ng-if="lenght_1 > 0 && width_1 > 0" >{{lenght_1*width_1}}</span></td>
+							
+						  </tr>
+						  
+						  
+						  
+						   <!-- <tr >
+							<td valign="top">A2 <input type="checkbox" class="calculate_area_checkbox" name="area_2_calculate" ng-model="area_2_calculate" id="area_2_calculate"></td>
+							<td valign="top"><input name="lenght_2" id="lenght_2" ng-model="lenght_2" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="width_2" ng-model="width_2" id="width_2" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="area_2_name" ng-model="area_2_name" id="area_2_name" type="text" class="deduct_item_qunatity" value="" > </td>
+							<td style="padding:5px 0px 0px 5px" ><span id="area_2" ng-model="area_2" ng-if="lenght_2 > 0 && width_2 > 0" >{{lenght_2*width_2}}</span></td>
+							
+						  </tr> 
+						   
+						  <tr >
+							<td valign="top">A3 <input type="checkbox" class="calculate_area_checkbox" name="area_3_calculate" ng-model="area_3_calculate" id="area_3_calculate"></td>
+							<td valign="top"><input name="lenght_3" id="lenght_3" ng-model="lenght_3" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="width_3" ng-model="width_3" id="width_3" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="area_1_name" ng-model="area_3_name" id="area_3_name" type="text" class="deduct_item_qunatity" value="" > </td>
+							<td style="padding:5px 0px 0px 5px" ><span id="area_3" ng-model="area_3" ng-if="lenght_3 > 0 && width_3 > 0" >{{lenght_3*width_3}}</span></td>
+							
+						  </tr>
+						  
+						  <tr >
+							<td valign="top">A4 <input type="checkbox" class="calculate_area_checkbox" name="area_4_calculate" ng-model="area_4_calculate" id="area_4_calculate"></td>
+							<td valign="top"><input name="lenght_4" id="lenght_4" ng-model="lenght_4" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="width_4" ng-model="width_4" id="width_4" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="area_4_name" ng-model="area_4_name" id="area_4_name" type="text" class="deduct_item_qunatity" value="" > </td>
+							<td style="padding:5px 0px 0px 5px" ><span id="area_4" ng-model="area_4" ng-if="lenght_4 > 0 && width_4 > 0" >{{lenght_4*width_4}}</span></td>
+							
+						  </tr>
+						  
+						  <tr >
+							<td valign="top">A5 <input type="checkbox" class="calculate_area_checkbox" name="area_5_calculate" ng-model="area_5_calculate" id="area_5_calculate"></td>
+							<td valign="top"><input name="lenght_5" id="lenght_5" ng-model="lenght_5" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="width_5" ng-model="width_5" id="width_5" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+							<td><input name="area_5_name" ng-model="area_5_name" id="area_5_name" type="text" class="deduct_item_qunatity" value="" > </td>
+							<td style="padding:5px 0px 0px 5px" ><span id="area_5" ng-model="area_5" ng-if="lenght_5 > 0 && width_5 > 0" >{{lenght_5*width_5}}</span></td>
+							
+							</tr>
+							
+							<tr >
+								<td valign="top">A6 <input type="checkbox" class="calculate_area_checkbox" name="area_6_calculate" ng-model="area_6_calculate" id="area_6_calculate"></td>
+								<td valign="top"><input name="lenght_6" id="lenght_6" ng-model="lenght_6" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+								<td><input name="width_6" ng-model="width_6" id="width_6" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+								<td><input name="area_6_name" ng-model="area_6_name" id="area_6_name" type="text" class="deduct_item_qunatity" value="" > </td>
+								<td style="padding:5px 0px 0px 5px" ><span id="area_6" ng-model="area_6" ng-if="lenght_6 > 0 && width_6 > 0" >{{lenght_6*width_6}}</span></td>
+								
+								</tr>
+
+								<tr >
+									<td valign="top">A7 <input type="checkbox" class="calculate_area_checkbox" name="area_7_calculate" ng-model="area_7_calculate" id="area_7_calculate"></td>
+									<td valign="top"><input name="lenght_7" id="lenght_7" ng-model="lenght_7" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+									<td><input name="width_7" ng-model="width_7" id="width_7" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+									<td><input name="area_7_name" ng-model="area_7_name" id="area_7_name" type="text" class="deduct_item_qunatity" value="" > </td>
+									<td style="padding:5px 0px 0px 5px" ><span id="area_7" ng-model="area_7" ng-if="lenght_7 > 0 && width_7 > 0" >{{lenght_7*width_7}}</span></td>
+									
+									</tr>
+
+									<tr >
+										<td valign="top">A8 <input type="checkbox" class="calculate_area_checkbox" name="area_8_calculate" ng-model="area_8_calculate" id="area_8_calculate"></td>
+										<td valign="top"><input name="lenght_8" id="lenght_8" ng-model="lenght_8" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+										<td><input name="width_8" ng-model="width_8" id="width_8" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+										<td><input name="area_8_name" ng-model="area_8_name" id="area_8_name" type="text" class="deduct_item_qunatity" value="" > </td>
+										<td style="padding:5px 0px 0px 5px" ><span id="area_8" ng-model="area_8" ng-if="lenght_8 > 0 && width_8 > 0" >{{lenght_8*width_8}}</span></td>
+										
+										</tr>
+
+										<tr >
+											<td valign="top">A9 <input type="checkbox" class="calculate_area_checkbox" name="area_9_calculate" ng-model="area_9_calculate" id="area_9_calculate"></td>
+											<td valign="top"><input name="lenght_9" id="lenght_9" ng-model="lenght_9" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+											<td><input name="width_9" ng-model="width_9" id="width_9" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+											<td><input name="area_9_name" ng-model="area_9_name" id="area_9_name" type="text" class="deduct_item_qunatity" value="" > </td>
+											<td style="padding:5px 0px 0px 5px" ><span id="area_9" ng-model="area_9" ng-if="lenght_9 > 0 && width_9 > 0" >{{lenght_9*width_9}}</span></td>
+											
+											</tr>
+
+											<tr >
+												<td valign="top">A10 <input type="checkbox" class="calculate_area_checkbox" name="area_10_calculate" ng-model="area_10_calculate" id="area_10_calculate"></td>
+												<td valign="top"><input name="lenght_10" id="lenght_10" ng-model="lenght_10" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+												<td><input name="width_10" ng-model="width_10" id="width_10" type="number" class="deduct_item_qunatity" ng-keyup="calculateTotalArea()" value="0" > </td>
+												<td><input name="area_10_name" ng-model="area_10_name" id="area_10_name" type="text" class="deduct_item_qunatity" value="" > </td>
+												<td style="padding:5px 0px 0px 5px" ><span id="area_10" ng-model="area_10" ng-if="lenght_10 > 0 && width_10 > 0" >{{lenght_10*width_10}}</span></td>
+												
+												</tr> -->
+
+						   
+						  <tr >
+							<td valign="top" colspan="3">Total Area</td>
+							
+							<td style="padding:5px 0px 0px 5px"><span id="toal_area" >{{area_1_input}}</span></td>
+							
+						  </tr>
+						  
+						  
+						  
+						</table>
+					</div>
+					<button class="button button-assertive" ng-click="submitData()">
+							Submit 
+					</button>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>

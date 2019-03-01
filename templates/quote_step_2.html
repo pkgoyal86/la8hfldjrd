@@ -1,0 +1,74 @@
+<ion-view view-title="Customer Info" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="login_form" style="margin-top:15%">
+					<h2 class="h2heading">Please enter customer detail.</h2>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+						
+						
+						
+                    
+						<label class="item item-input">
+							<i class="icon ion-ios-person"></i>
+							<input style="text-transform: capitalize;" type="text" placeholder="First Name" ng-model="user.first_name" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+						</label>
+						<div  ng-show="LoginForm.$submitted||LoginForm.first_name.$touched">
+							<div class="msg-show"  ng-show="LoginForm.first_name.$error.required" >Please enter first name.</div>
+							 
+						</div>
+						
+						
+						<label class="item item-input">
+							<i class="icon ion-ios-person"></i>
+							<input  style="text-transform: capitalize;" type="text" placeholder="Last Name" ng-model="user.last_name" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+						</label>
+					   <div  ng-show="LoginForm.$submitted||LoginForm.last_name.$touched">
+							<div class="msg-show"  ng-show="LoginForm.last_name.$error.required" >Please enter last name.</div>
+							 
+						</div>
+						
+						<label class="item item-input">
+							<i class="icon ion-ios-email"></i>
+							<input type="text" placeholder="Email" ng-model="user.email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> 
+						</label>
+						
+						<label class="item item-input">
+							<i class="icon ion-iphone"></i>
+							<input type="text" placeholder="Phone Number" ng-model="user.phone_number" name="phone_number" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> 
+						</label>
+						
+						<label class="item item-input">
+							<i class="icon ion-ios-location"></i>
+							<input type="text" placeholder="Postcode" ng-model="user.postcode" name="postcode" autocomplete="off" autocorrect="off"  style="text-transform:uppercase" spellcheck="false" /> 
+						</label>
+						
+						<label class="item item-input">
+							<i class="icon ion-ios-person"></i>
+							<input style="text-transform: capitalize;" type="text" placeholder="Reference" ng-model="user.reference" name="reference" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> 
+						</label>
+					  
+                      
+					 <button class="button button-assertive fullwd" ng-click="submitData()">
+							Submit 
+					</button>
+					
+                    </div>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>

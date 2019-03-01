@@ -1,0 +1,70 @@
+<ion-view view-title="Summary" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="login_form" style="margin-top:15%">
+					<h2 class="h2heading">Summary and confirmation.</h2>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+						<div class="m_table" >
+						<table>
+							<!-- <tr>
+								<th width="70%">Total Area</th>
+								<td>{{current_quote_data.Quote.total_area}}m<sup>2</sup></td>
+							</tr> -->	
+							<tr>
+								<th >All Services cost</th>
+								<td>&pound;{{current_quote_data.Total_price | number : 2}}</td>
+							</tr>
+							<tr>
+								<th >Total cost <!-- (Area * Cost) --></th>
+								<td>&pound;{{current_quote_data.Quote.total_area * current_quote_data.Total_price | number : 2}}</td>
+							</tr>
+							<!-- <tr>
+								<th >Discount</th>
+								<td><input style="color: rgb(0, 0, 0);border: 1px solid #999;height: 30px;padding-top: 5px;padding-bottom: 5px;" name="discount" id="discount" ng-model="user.discount" type="number" class="" value="0" ></td>
+							</tr> 
+							<tr>
+								<th >Total After discount</th>
+								<td>{{(current_quote_data.Quote.total_area * current_quote_data.Total_price) - ((user.discount*(current_quote_data.Quote.total_area * current_quote_data.Total_price))/100) | number : 2}}</td>
+							</tr>-->
+						  </table>
+						  </div>
+						
+						
+                    
+						
+						
+						<br>
+						
+						
+						
+						
+						
+						<textarea style="width: 100%; height: 100px; padding: 5px;" ng-model="user.notes"  placeholder="Comments or notes"></textarea>
+						
+						
+					  
+                      
+					 <button class="button button-assertive fullwd" style="margin-top:20px" ng-click="submitData()">
+							Submit 
+					</button>
+					
+                    </div>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>

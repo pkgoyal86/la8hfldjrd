@@ -1,0 +1,52 @@
+<ion-view view-title="Product Search" >
+	
+  <ion-content class="">
+	
+      <div class="login_bg ">
+			<div class = "card">
+				<form class="form-height" ng-submit="searchProduct()">
+				   <label class="item item-input">
+						<i class="icon ion-search"></i>&nbsp;&nbsp;<input type="text" placeholder="Search Product" name="user_keyword" id="user_keyword"/>
+					</label>
+				</form>
+			</div>	
+			
+			
+		
+			
+             
+            <div class="" style="padding:0px" ng-if="data.length > 0">
+
+				  
+					<div class="m_table" style="padding:0px">
+						<table>
+						  <tr>
+							<th width="45%">Title</th>
+							<th width="30%">Location</th>
+							<th>Quantity</th>
+							
+						  </tr>
+						  <tr ng-repeat="value in data">
+							<td>{{value.Product.title}}</td>
+							<td>{{value.Product.location}}</td>
+							<td>{{value.Product.quantity}}</td>
+							
+						  </tr>
+						  
+						</table>
+					</div>
+				  
+
+				
+				
+				  
+					
+             
+              
+		</div>
+		<div class="no_record_found card" ng-if="data.length <= 0">
+				No record found
+			</div>
+		
+  </ion-content>
+</ion-view>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> 
+	<meta http-equiv="Content-Security-Policy" content="default-src * gap:;font-src 'self' data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/additional.css" rel="stylesheet">
+    <link href="css/font_awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    
+   
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+	<script src="js/jquery.min.js"></script>
+	
+	  <script src="lib/bluebird.min.js"></script>
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+	
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+	 
+	
+	<!-- <script src="lib/angular/angular-sanitize.min.js"></script> -->
+	
+	
+<script src="js/pace.min.js"></script>
+
+	<link rel="stylesheet" href="css/slider.css">
+    <!-- your app's js -->
+    <script src="js/app.js?5"></script>
+    <script src="js/controllers.js?5"></script>
+    <script src="js/controller/AppCtrl.js"></script>
+    <script src="js/controller/HomeCtrl.js"></script>
+   
+    
+   <!-- <script src="js/controller/UserListCtrl.js"></script> -->
+    
+    <script src="js/controller/dashboardCtrl.js"></script>
+    <script src="js/controller/SyncDataCtrl.js"></script>
+    <script src="js/controller/QuoteStep1Ctrl.js"></script>
+    <script src="js/controller/QuoteStep2Ctrl.js"></script>
+    <script src="js/controller/QuoteStep3Ctrl.js"></script>
+    <script src="js/controller/QuoteStep4Ctrl.js"></script>
+    <script src="js/controller/QuoteStep5Ctrl.js"></script>
+    <script src="js/controller/QuoteStep6Ctrl.js"></script>
+    <script src="js/controller/QuoteStep7Ctrl.js"></script>
+    <script src="js/controller/QuoteStep8Ctrl.js"></script>
+    <script src="js/controller/ThanksCtrl.js"></script>
+    <script src="js/controller/productSearchCtrl.js"></script>
+    <script src="js/controller/loginCtrl.js"></script>
+    <script src="js/controller/submitPlanCtrl.js"></script>
+    <script src="js/controller/uploadImageCtrl.js"></script>
+	
+    <script src="js/controller/nointernetCtrl.js"></script>
+    
+   
+   
+   
+  
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+		
+  </body>
+</html>

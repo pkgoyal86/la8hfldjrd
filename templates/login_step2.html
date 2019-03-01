@@ -1,0 +1,50 @@
+<ion-view view-title="Verify Code" >
+	
+  <ion-content>
+      <div class="login_bg nobg" ng-controller="loginStep2Ctrl">
+             <div class="logo hide-on-keyboard-open"><a href="#"><img src="img/ping_300dpi.png"/></a></div>
+             
+             <div class="login_form">
+				
+					<div class="msg-show" ng-show="code2success">{{code2successMsg}}</div>
+					<form class="form-height" name="Login2Form" id="Login2Form" novalidate ng-submit="Login2Form.$valid">
+					<div class="list">
+					
+						
+                    <label class="item item-input">
+							<i class="icon ion-iphone"></i>
+							<input type="number" placeholder="Please enter the code" name="phone_number_code" ng-model="user.phone_number_code"  ng-pattern="/^[0-9]*$/" required/>
+						</label>
+						<div class="msg-show" ng-show="Login2Form.phone_number_code.$error.pattern">Numbers only, please.</div>
+						<div class="msg-show"   ng-show="Login2Form.$submitted||Login2Form.phone_number_code.$touched">
+							<div class="msg-show"   ng-show="Login2Form.phone_number_code.$error.required" >Please enter the Phone number?
+							</div>
+						</div>
+						
+						
+					<label class="item item-input">
+							<i class="icon ion-ios-person"></i>
+							<input type="text" placeholder="Please choose a Username"   name="username" ng-model="user.username" ng-pattern="/^[a-zA-Z]*$/" required />
+						</label>
+						<div class="msg-show" ng-show="Login2Form.username.$error.pattern">Alphabet only, please.</div>
+						<div class="msg-show"  ng-show="Login2Form.$submitted||Login2Form.username.$touched">
+							<div class="sub-error msg-show" ng-show="Login2Form.username.$error.required" >Please choose username.
+							</div>
+						</div>
+
+						
+					 <button class="button button-assertive" ng-click="submitLogin2Data()" ng-disabled="Login2Form.$invalid">
+							Continue <i class="icon ion-android-send"></i>
+					</button>
+					
+					<br>
+					<br>
+                    </div>
+                    </form>
+             </div>
+             
+              
+		</div>
+		 
+  </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="Login" >
+	
+  <ion-content>
+      <div class="login_bg nobg">
+             <div class="logo hide-on-keyboard-open"><a href="#"><img src="img/logo.png"/></a></div>
+             
+             <div class="login_form">
+				
+					<div class="msg-show" ng-show="ApiRespnsMsgShow">{{ApiRespnsMsg}}</div>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+						
+						
+						
+                    
+                       <label class="item item-input">
+                       <i class="icon ion-ios-person"></i>
+                        <input type="email" placeholder="Email" ng-model="user.email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+                      </label>
+					   <div  ng-show="LoginForm.$submitted||LoginForm.email.$touched">
+							  <div class="msg-show"  ng-show="LoginForm.email.$error.required" >Please enter your email to log in.</div>
+							  <div class="msg-show"  ng-show="LoginForm.email.$error.email" >Hmmm. This doesn't look like an email address. Can you check again?</div>
+						</div>
+                      <label class="item item-input">
+                        <i class="icon ion-ios-locked"></i>
+                        <input type="password" placeholder="Password" name="password" ng-model="user.password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required />
+                      </label>
+					   <div class="error msg-show" ng-show="LoginForm.$submitted||LoginForm.password.$touched">
+						  <div class="sub-error msg-show" ng-show="LoginForm.password.$error.required" >Please enter your password to log in.</div>
+					</div> 
+					 <button class="button button-assertive" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Login <i class="icon ion-android-send"></i>
+					</button>
+					
+                    </div>
+                    </form>
+             </div>
+             
+              
+		</div>
+		 
+  </ion-content>
+		
+</ion-view>

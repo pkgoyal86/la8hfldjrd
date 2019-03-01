@@ -1,0 +1,48 @@
+<ion-view view-title="Quote Number" >
+	
+  <ion-content class="globebg">
+	
+		<div class="login_bg ">
+				<div class="logobg hide-on-keyboard-open">
+					 <img src="img/logo.png"/>
+				</div>
+			
+			<div class="login_bg openasiphone">
+             
+				
+			
+			 <div class="login_form" style="margin-top:30px">
+					<h2 class="h2heading">Please enter unique quote number to start.</h2>
+					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
+					<div class="list">
+					
+						
+						
+						
+                    
+                       <label class="item item-input">
+                       <i class="icon ion-ios-person"></i>
+                        <input readonly="readonly" type="text" placeholder="Quote Number" ng-model="user.id" name="id" value="{{date | date:'yyyy-MM-dd'}}" style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+                      </label>
+					   <div  ng-show="LoginForm.$submitted||LoginForm.email.$touched">
+							  <div class="msg-show"  ng-show="LoginForm.email.$error.required" >Please enter unique quote number to start.</div>
+							 
+						</div>
+                      
+					  <p style="text-align: right;padding-right: 10px;color: #fff;font-size: 16px;color: rgba;margin-bottom: 20px;margin-top: 20px;">Agent Name : {{first_name}} {{last_name}}</p>
+					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
+							Submit 
+					</button>
+					
+                    </div>
+                    </form>
+             </div>
+			 
+			 
+			
+					
+					
+             </div>
+		</div> 
+  </ion-content>
+</ion-view>
