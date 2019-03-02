@@ -47,7 +47,7 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 	
 	$scope.submitData = function()
 	{
-		
+		$ionicLoading.show();
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
 		$scope.user.purchase_type			=	2;
 		var params = JSON.stringify($scope.user);

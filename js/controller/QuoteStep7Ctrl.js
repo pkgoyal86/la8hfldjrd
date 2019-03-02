@@ -54,12 +54,15 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 		$scope.user.choosed_services	=	array; */
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
 		var params = JSON.stringify($scope.user);
-		$http.get(SiteUrl+"/quote_step_7?data="+params)
+		/* console.log(params);
+		return false; */
+		$http.get(SiteUrl+"/quote_step_8?data="+params)
 			.then(function(req_response){
 				
 				$ionicLoading.hide();
 				if(req_response.data.message == "success"){
-					$state.go('app.quote_step_8');
+					localStorage.setItem("current_quote_number","");
+					$state.go('app.thanks');
 
 				}else if(req_response.data.message == "failed"){
 						var alertPopup = $ionicPopup.alert({

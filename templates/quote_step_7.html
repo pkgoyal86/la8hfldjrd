@@ -12,18 +12,24 @@
 					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
 					
 					
-						<ion-list>
+						<!-- <ion-list>
 
 						  <ion-checkbox ng-change="print()" ng-model="user.choosed_services[value.id]" ng-repeat="value in data">{{value.title}} <strong style="float:right;color:#fff">  &pound;{{value.price * current_quote_data.Quote.total_area | number : 2}} </strong></ion-checkbox>
 						 
 
-						</ion-list>
+						</ion-list> -->
+						
+						<div class = "list">
+						   <div style="background-color: unset;color: #fff;border: 2px solid #fff;margin-bottom: 15px;border-radius: 5px;" class = "item" ng-repeat="value in data">{{value.title}}  <strong style="float:right"> &pound;{{value.price * current_quote_data.Quote.total_area | number : 2}}</strong></div>
+						   
+						</div>
+						
 						<label class="item item-input">
                        
-						<input type="text" placeholder="Sign please"  style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+							<input type="text" placeholder="Sign please"  style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required ng-model="user.sign_text" /> 
 						</label>
 						<label class="item item-input">
-						<textarea style="width: 100%; height: 100px; padding: 5px;background-color: unset;" ng-model="user.notes"  placeholder="Comments or notes"></textarea> 
+						<textarea style="width: 100%; height: 100px; padding: 5px;background-color: unset;color:#fff" ng-model="user.notes"  placeholder="Comments or notes"></textarea> 
                       </label>
 					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
 							Submit 
