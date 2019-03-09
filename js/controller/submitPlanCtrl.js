@@ -58,7 +58,18 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
         $scope.user.signature = sigImg;
 		
 		var params = JSON.stringify($scope.user);
-		$http.get(SiteUrl+"/quote_step_8?data="+params)
+		jQuery.ajax({
+			   type: "POST",
+			   url: SiteUrl+"/quote_step_8",
+			   data: 'data='+params, 
+			   success: function(data)
+			   {
+				  $ionicLoading.hide();
+				  localStorage.setItem("current_quote_number","");
+					$state.go('app.thanks');
+			   }
+			 });
+		/* $http.get(SiteUrl+"/quote_step_8?data="+params)
 			.then(function(req_response){
 				
 				$ionicLoading.hide();
@@ -78,7 +89,7 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 						  });
 				}
 				
-			});
+			}); */
 	}
 	
 	

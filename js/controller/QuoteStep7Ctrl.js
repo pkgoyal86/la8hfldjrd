@@ -45,6 +45,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 	}
 	$scope.submitData = function()
 	{
+		$ionicLoading.show();
 		/* var array = [];
 		for(i in $scope.user1.choosed_services) {
 			console.log($scope.user1.choosed_services[i]);
@@ -88,6 +89,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 			   data: 'data='+params, 
 			   success: function(data)
 			   {
+				  $ionicLoading.hide();
 				  localStorage.setItem("current_quote_number","");
 					$state.go('app.thanks');
 			   }
