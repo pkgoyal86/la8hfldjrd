@@ -57,22 +57,29 @@ font-weight: bold;">{{value.title}}</h2>
 										<th >Cost per month</th>
 										<th> &pound;{{((current_quote_data.Quote.total_area * value.price * (100 - value.discount))/100 | number : 2)/12 | number : 2}}</td>
 									</tr>
-									<tr>
-										<td colspan="2" style="text-align: center;">
-										<input type="text" placeholder="Sign please"  style="width: 100%;float: left;padding-left: 5px;color:#000;border-bottom:1px solid #dddddd"  ng-model="user.sign_text" /> 
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2" style="text-align: center;">
-										<textarea style="width: 100%; height: 100px; padding: 5px;" ng-model="user.notes"  placeholder="Comments or notes"></textarea>
-										</td>
-									</tr>
+									
 									
 									</table>
 						</div>
 						
 						
+					  <p class="tcp">Comments or notes</p>
+						<label class="item item-input">
+						
+							<textarea style="width: 100%; height: 100px; padding: 5px;background-color: unset;color:#fff" ng-model="user.notes"  placeholder=""></textarea> 
+						</label>
+						
+						<p class="tcp">Terms and conditions</p>
+						<div class="tctext" ng-bind-html="data1"></div> 
+						
+						
 					  
+						<p class="tcp">Sign Here Please</p>
+						
+                       
+							<div style="float:left;width:100%">
+								<canvas id='signatureCanvas' style='border: 1px solid black; touch-action: none;background-color: #fff;margin-bottom: 11px;width: 100%;'></canvas>
+							</div>	
                       
 					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
 							Submit

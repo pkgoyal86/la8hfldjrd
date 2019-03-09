@@ -32,6 +32,8 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 
 		}).then(function mySucces(response) {
 			$scope.data	=	 response.data.Service;
+			$scope.data1	=	 response.data.Page.description;
+			console.log($scope.data1);
 			$scope.getQuoteDetial();
 		}, function myError(response) {
 
@@ -53,9 +55,12 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 		console.log(array);
 		$scope.user.choosed_services	=	array; */
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
+		var sigImg = signaturePad.toDataURL();
+        $scope.user.signature = sigImg;
 		var params = JSON.stringify($scope.user);
-		/* console.log(params);
-		return false; */
+		
+		  console.log(params);
+		  
 		$http.get(SiteUrl+"/quote_step_8?data="+params)
 			.then(function(req_response){
 				
@@ -81,7 +86,14 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 
 	}
 	
-	
+	var canvas = document.getElementById('signatureCanvas');
+    var signaturePad = new SignaturePad(canvas);
+
+    $scope.clearCanvas = function() {
+        signaturePad.clear();
+    }
+
+    
 	
 	
 })

@@ -20,6 +20,7 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 
 		}).then(function mySucces(response) {
 			$scope.data	=	 response.data.Plan;
+			$scope.data1	=	 response.data.Page.description;
 			$scope.getQuoteDetial();
 		}, function myError(response) {
 
@@ -35,6 +36,8 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 		}).then(function mySucces(response) {
 			$scope.current_quote_data	=	 response.data;
 			console.log($scope.current_quote_data.Quote.total_area);
+			$scope.canvas = document.getElementById('signatureCanvas');
+			$scope.signaturePad = new SignaturePad($scope.canvas);
 		}, function myError(response) {
 
 		});
@@ -50,6 +53,10 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 		$ionicLoading.show();
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
 		$scope.user.purchase_type			=	2;
+		
+		var sigImg = $scope.signaturePad.toDataURL();
+        $scope.user.signature = sigImg;
+		
 		var params = JSON.stringify($scope.user);
 		$http.get(SiteUrl+"/quote_step_8?data="+params)
 			.then(function(req_response){
@@ -72,9 +79,13 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 				}
 				
 			});
-		
-		
-
-
 	}
+	
+	
+
+    $scope.clearCanvas = function() {
+        signaturePad.clear();
+    }
+	
+	
 })

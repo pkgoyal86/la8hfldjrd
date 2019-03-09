@@ -22,7 +22,7 @@
                     
                        <label class="item item-input">
                        <i class="icon ion-ios-person"></i>
-                        <input readonly="readonly" type="text" placeholder="Quote Number" ng-model="user.id" name="id" value="{{date | date:'yyyy-MM-dd'}}" style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
+                        <input  type="text" placeholder="Quote Number" ng-model="user.id" name="id" style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required /> 
                       </label>
 					   <div  ng-show="LoginForm.$submitted||LoginForm.email.$touched">
 							  <div class="msg-show"  ng-show="LoginForm.email.$error.required" >Please enter unique quote number to start.</div>

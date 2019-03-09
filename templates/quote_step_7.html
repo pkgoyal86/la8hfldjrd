@@ -8,7 +8,7 @@
 				
 			
 			 <div class="login_form servicelist" style="margin-top:15%">
-					<h2 class="h2heading">Individual Service Costs <br> (according to area {{current_quote_data.Quote.total_area}} m<sup>2</sup>).</h2>
+					<h2 class="h2heading">Individual Service Costs </h2>
 					<form class="form-height" name="LoginForm" id="LoginForm" novalidate ng-submit="LoginForm.$valid">
 					
 					
@@ -23,14 +23,33 @@
 						   <div style="background-color: unset;color: #fff;border: 2px solid #fff;margin-bottom: 15px;border-radius: 5px;" class = "item" ng-repeat="value in data">{{value.title}}  <strong style="float:right"> &pound;{{value.price * current_quote_data.Quote.total_area | number : 2}}</strong></div>
 						   
 						</div>
+						<p class="tcp">Comments or notes</p>
+						<label class="item item-input">
 						
-						<label class="item item-input">
-                       
-							<input type="text" placeholder="Sign please"  style="background-color:unset" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required ng-model="user.sign_text" /> 
+							<textarea style="width: 100%; height: 100px; padding: 5px;background-color: unset;color:#fff" ng-model="user.notes"  placeholder=""></textarea> 
 						</label>
-						<label class="item item-input">
-						<textarea style="width: 100%; height: 100px; padding: 5px;background-color: unset;color:#fff" ng-model="user.notes"  placeholder="Comments or notes"></textarea> 
-                      </label>
+						
+						<p class="tcp">Terms and conditions</p>
+						<div class="tctext" ng-bind-html="data1"></div> 
+						
+						
+					  
+						<p class="tcp">Sign Here Please</p>
+						
+                       
+							<div style="float:left;width:100%">
+								<canvas id='signatureCanvas' style='border: 1px solid black; touch-action: none;background-color: #fff;margin-bottom: 11px;width: 100%;'></canvas>
+							</div>	
+          
+          <!-- <div class='button-bar'>
+              <a class='button button-energized' ng-click='clearCanvas()'>Clear</a>
+              <a class='button button-balanced' ng-click='saveCanvas()'>Save</a>
+          </div> -->
+          <!-- <br>
+          <img ng-src='{{signature}}'/> -->
+      
+						
+						
 					 <button class="button button-assertive fullwd" ng-click="submitData()" ng-disabled="LoginForm.$invalid">
 							Submit 
 					</button>
