@@ -61,7 +61,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 		
 		  console.log(params);
 		  
-		$http.get(SiteUrl+"/quote_step_8?data="+params)
+		/* $http.get(SiteUrl+"/quote_step_8?data="+params)
 			.then(function(req_response){
 				
 				$ionicLoading.hide();
@@ -81,9 +81,26 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 						  });
 				}
 				
-			});
-
-
+			}); */
+			jQuery.ajax({
+			   type: "POST",
+			   url: SiteUrl+"/quote_step_8",
+			   data: 'data='+params, 
+			   success: function(data)
+			   {
+				  localStorage.setItem("current_quote_number","");
+					$state.go('app.thanks');
+			   }
+			 });
+			/* var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+				 localStorage.setItem("current_quote_number","");
+					$state.go('app.thanks');
+				}
+			  };
+			  xhttp.open("POST", SiteUrl+"/quote_step_8?data="+params, true);
+			  xhttp.send(); */
 	}
 	
 	var canvas = document.getElementById('signatureCanvas');
