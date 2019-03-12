@@ -18,6 +18,7 @@ angular.module('starter.controllers').controller('QuoteStep6Ctrl', function($roo
 			$scope.user	=	 response.data.Quote;
 			$scope.user.recommended_services	=	 JSON.parse(response.data.Quote.recommend_service_json);
 			$scope.current_quote_data	=	 response.data;
+			$scope.getLawnconditions($scope.current_quote_data.Quote.total_area);
 		}, function myError(response) {
 
 		});
@@ -25,19 +26,21 @@ angular.module('starter.controllers').controller('QuoteStep6Ctrl', function($roo
 	
 	
 	
-	$scope.getLawnconditions = function () {
+	$scope.getLawnconditions = function (area) {
 		$http({
 			method : "GET",
-			url : SiteUrl+"/get_data_from_server",
+			url : SiteUrl+"/get_data_from_server/"+area,
 
 		}).then(function mySucces(response) {
 			$scope.data	=	 response.data.Service;
-			$scope.getQuoteDetial();
+			
 		}, function myError(response) {
 
 		});
 	}
-	$scope.getLawnconditions();
+	
+	$scope.getQuoteDetial();
+	
 	$scope.user	=	{};
 	$scope.user1	=	{};
 	$scope.print = function() {

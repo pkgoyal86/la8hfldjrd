@@ -13,20 +13,20 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 	$scope.user.notes	=	'';
 	var plan_id			=	$stateParams.plan_id;
 	$scope.plan_id	=	plan_id;
-	$scope.getLawnconditions = function () {
+	$scope.getLawnconditions = function (area) {
 		$http({
 			method : "GET",
-			url : SiteUrl+"/get_data_from_server",
+			url : SiteUrl+"/get_data_from_server/"+area,
 
 		}).then(function mySucces(response) {
 			$scope.data	=	 response.data.Plan;
 			$scope.data1	=	 response.data.Page.description;
-			$scope.getQuoteDetial();
+			
 		}, function myError(response) {
 
 		});
 	}
-	$scope.getLawnconditions();
+	
 	
 	$scope.getQuoteDetial = function () {
 		$http({
@@ -38,12 +38,13 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 			console.log($scope.current_quote_data.Quote.total_area);
 			$scope.canvas = document.getElementById('signatureCanvas');
 			$scope.signaturePad = new SignaturePad($scope.canvas);
+			$scope.getLawnconditions($scope.current_quote_data.Quote.total_area);
 		}, function myError(response) {
 
 		});
 	}
 	
-		
+	$scope.getQuoteDetial();	
 	
 	
 	
