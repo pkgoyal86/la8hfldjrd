@@ -56,8 +56,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 		console.log(array);
 		$scope.user.choosed_services	=	array; */
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
-		var sigImg = signaturePad.toDataURL();
-        $scope.user.signature = sigImg;
+		
 		var params = JSON.stringify($scope.user);
 		
 		  console.log(params);
@@ -90,8 +89,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 			   success: function(data)
 			   {
 				  $ionicLoading.hide();
-				  localStorage.setItem("current_quote_number","");
-					$state.go('app.thanks');
+				 $state.go('app.signpage');
 			   }
 			 });
 			/* var xhttp = new XMLHttpRequest();
@@ -105,12 +103,7 @@ angular.module('starter.controllers').controller('QuoteStep7Ctrl', function($roo
 			  xhttp.send(); */
 	}
 	
-	var canvas = document.getElementById('signatureCanvas');
-    var signaturePad = new SignaturePad(canvas);
-
-    $scope.clearCanvas = function() {
-        signaturePad.clear();
-    }
+	
 
     
 	

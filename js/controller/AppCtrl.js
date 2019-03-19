@@ -201,8 +201,25 @@ angular.module('starter.controllers').controller('AppCtrl', function($scope, $io
 	}
 
 
-
-
+	$scope.jobDetail = function(id)
+	{
+		
+		$state.transitionTo('app.ticket_detail', {'id': id}, {
+			reload: true,
+			inherit: false,
+			notify: true
+		});
+	}
+	
+	$scope.uploadMoreImage = function(id)
+	{
+		
+		$state.transitionTo('app.upload_more_image', {'id': id}, {
+			reload: true,
+			inherit: false,
+			notify: true
+		});
+	}
 
 	var myPopup ;
 	var myInterval ;

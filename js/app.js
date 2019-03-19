@@ -274,6 +274,28 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       }
     })
 	
+	.state('app.upload_more_image', {
+      url: '/upload_more_image/:id',
+	  cache: false,
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/upload_more_image.html',
+          controller: 'uploadMoreImageCtrl'
+        }
+      }
+    })
+	
+	.state('app.signpage', {
+      url: '/signpage',
+	  cache: false,
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/signpage.html',
+          controller: 'signpageCtrl'
+        }
+      }
+    })
+	
 	
 	.state('app.submit_plan', {
       url: '/submit_plan/:plan_id',
@@ -286,7 +308,27 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       }
     })
 	
+	.state('app.listing', {
+      url: '/listing',
+	  
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/listing.html',
+          controller: 'listingCtrl'
+        }
+      }
+    })
 	
+	.state('app.ticket_detail', {
+      url: '/ticket_detail/:id',
+	  
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/ticket_detail.html',
+          controller: 'ticketDetailCtrl'
+        }
+      }
+    })
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');

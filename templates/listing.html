@@ -1,0 +1,41 @@
+<ion-view view-title="All Quotes" >
+	
+  <ion-content class="globebg">
+      <div class="login_bg nobg">
+			
+			<div class = "card">
+				<form class="form-height" ng-submit="searchProduct()">
+				   <label class="item item-input">
+						<i class="icon ion-search"></i>&nbsp;&nbsp;<input type="text" placeholder="Search Quotes" name="user_keyword" id="user_keyword"/>
+					</label>
+				</form>
+			</div>
+		
+			
+			
+			
+			<div class="list" ng-if="data.length > 0" ng-repeat="value in data">
+
+				<a class="item " href="javascript:void(0)" ng-click="jobDetail(value.Quote.id)">
+				  
+				  <h2 style="color: teal;font-size: 18px;">Quote Number : {{value.Quote.id}}</h2>
+				  <p><i class="fa fa-address-book-o" aria-hidden="true"></i> <strong>Customer Name </strong>: {{value.Quote.first_name}} {{value.Quote.last_name}}</p>
+				  <p><i class="fa fa-phone" aria-hidden="true"></i> <strong>Phone </strong>: {{value.Quote.phone_number }} </p>
+				  
+				  <p><i class="fa fa-map-marker" aria-hidden="true"></i> <strong>Address</strong> : {{value.Quote.house_number}} {{value.Quote.street_number}} {{value.Quote.town}} {{value.Quote.county}}  {{value.Quote.postcode}}</p>
+				  <p><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Created at</strong> : {{value.Quote.created}}</p>
+				 
+				  
+				</a>
+
+			</div>
+			
+				
+				<div class="no_record_found card" ng-if="data.length <= 0">
+					No record found 
+				</div>
+				
+		</div>	
+	
+  </ion-content>
+</ion-view>

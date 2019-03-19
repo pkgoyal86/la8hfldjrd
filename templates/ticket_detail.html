@@ -1,0 +1,213 @@
+<ion-view view-title=" Quote Id : {{data.Quote.id}}" >
+	
+  <ion-content class="globebg">
+      <div >
+			<div ng-include="'templates/top_menu.html'" ></div>		
+							
+			<div class="list card">
+				
+			  <div class="item" style="padding: 15px 5px;">
+			  
+				<h1 style="color: red;white-space: normal;text-align: center;font-size: 28px;font-weight: bold;">
+ Quote Id : {{data.Quote.id}}</h2>
+ 
+				
+				<div class="card">
+					<div class="item item-divider">
+					<i class="fa fa-user" aria-hidden="true"></i>  Customer Name </span>
+					</div>
+					<div class="item item-text-wrap">
+					{{data.Quote.first_name}} {{data.Quote.last_name}}		 		  
+					</div>
+				</div>
+				
+				<div class="card">
+					<div class="item item-divider">
+					<i class="fa fa-map-marker" aria-hidden="true"></i> Address
+					</div>
+					<div class="item item-text-wrap">
+						{{data.Quote.house_number}}
+						<br>
+						{{data.Quote.street_number}}
+						<br>
+						{{data.Quote.town}}
+						<br>
+						{{data.Quote.county}}
+						<br>
+						{{data.Quote.postcode}}
+						<br>				
+					</div>
+				</div>
+				
+				<div class="card" ng-if="data.Quote.phone_number != '' && data.Quote.phone_number != null">
+					<div class="item item-divider">
+					<i class="fa fa-mobile" aria-hidden="true"></i> Phone number
+					</div>
+					<div class="item item-text-wrap">
+						{{data.Quote.phone_number}}
+										  
+					</div>
+				</div>
+				
+				<div class="card" ng-if="data.Quote.email != '' && data.Quote.email != null">
+					<div class="item item-divider">
+					<i class="fa fa-envelope" aria-hidden="true"></i> Email
+					</div>
+					<div class="item item-text-wrap">
+						{{data.Quote.email}}
+										  
+					</div>
+				</div>
+				
+				
+				<div class="card" ng-if="data.Quote.email != '' && data.Quote.email != null">
+					<div class="item item-divider">
+					Issue with big machine
+					</div>
+					<div class="item item-text-wrap">
+						<span ng-if="data.Quote.big_machine_issue == 1">Yes</span>
+						<span ng-if="data.Quote.big_machine_issue == 0">No</span>
+										  
+					</div>
+				</div>
+				
+				
+				
+				
+				
+			  </div>
+
+			   <div class="card">
+				
+				<div class="item item-divider">
+					Area Detail
+					</div>
+				<table class="table table-bordered table-striped" width="100%">
+					  <tr>
+								<th>
+									Area name
+								</th>
+								<th>
+									Lenght
+								</th>
+								<th>
+									Width
+								</th>
+								<th>
+									Should Calculate
+								</th>
+							</tr>
+							<tbody>
+								<tr ng-repeat="value in Area.Area">
+									<th>
+										{{value.area_name}}
+									</th>
+									<th>
+										{{value.lenght}}
+									</th>
+									<th>
+										{{value.width}}
+									</th>
+									<th>
+										<span ng-if="value.calculate == true">Yes</span>
+										<span ng-if="value.calculate != true">No</span>
+										
+										
+									</th>
+									
+								</tr>
+							
+					  </tbody>
+					  </table>
+				
+				
+				
+				
+				
+				
+				
+			  </div>
+			  
+			  <div class="card">
+					<div class="item item-divider">
+					Lawn Condition
+					</div>
+					<div class="item item-text-wrap">
+						<ul>
+							<li ng-repeat="value1 in data.LawnCondition">
+								{{value1.name}}
+							</li>
+						</ul>
+										  
+					</div>
+				</div>
+				
+			 <div class="card">
+					<div class="item item-divider">
+					Purchase Detail
+					</div>
+					
+						<table class="table table-bordered table-striped" width="100%" ng-if="data.Quote.purchase_type == 2">
+					  <tr>
+							<th width="30%">
+								Plan  
+							</th>
+							<th>:</th>
+							<th>
+								<strong>{{data.Plan.title}}</strong>
+							</th>
+						<tr>
+						</tr>	
+							<th>
+								Detial  
+							</th>
+							<th>:</th>
+							<th>
+								<div data-ng-bind-html="data.Plan.description">
+								 
+								</div>
+							</th>
+						</tr>
+						</tr>	
+							<th>
+								Date 
+							</th>
+							<th>:</th>
+							<th>
+								{{data.Quote.created}}
+							</th>
+						</tr>
+						</tr>	
+							<th>
+								Agent
+							</th>
+							<th>:</th>
+							<th>
+								{{data.User.first_name}} {{data.User.last_name}}
+							</th>
+						</tr>
+					  </table>			  
+					
+					  <p style="text-align: center;font-size: 16px;margin-top: 10px;font-weight: bold;" ng-if="data.Quote.purchase_type != 2">By Services (No Plan)</p>	
+				</div>
+			  
+			  
+			   
+			  <div class="item item-body" >
+				
+				
+				<button class="button button-balanced fullwd" ng-click="uploadMoreImage(data.Quote.id)">
+				 View and Add Photos
+				</button>
+				
+			  </div>
+			  
+			 
+			  
+			  
+			</div>
+				
+		</div>	
+	
+  </ion-content>
+</ion-view>

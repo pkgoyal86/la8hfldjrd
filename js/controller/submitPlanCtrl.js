@@ -36,8 +36,7 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 		}).then(function mySucces(response) {
 			$scope.current_quote_data	=	 response.data;
 			console.log($scope.current_quote_data.Quote.total_area);
-			$scope.canvas = document.getElementById('signatureCanvas');
-			$scope.signaturePad = new SignaturePad($scope.canvas);
+			
 			$scope.getLawnconditions($scope.current_quote_data.Quote.total_area);
 		}, function myError(response) {
 
@@ -55,8 +54,7 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 		$scope.user.current_quote_number	=	localStorage.getItem("current_quote_number");
 		$scope.user.purchase_type			=	2;
 		
-		var sigImg = $scope.signaturePad.toDataURL();
-        $scope.user.signature = sigImg;
+		
 		
 		var params = JSON.stringify($scope.user);
 		jQuery.ajax({
@@ -66,8 +64,8 @@ angular.module('starter.controllers').controller('submitPlanCtrl', function($roo
 			   success: function(data)
 			   {
 				  $ionicLoading.hide();
-				  localStorage.setItem("current_quote_number","");
-					$state.go('app.thanks');
+				  
+					$state.go('app.signpage');
 			   }
 			 });
 		/* $http.get(SiteUrl+"/quote_step_8?data="+params)
