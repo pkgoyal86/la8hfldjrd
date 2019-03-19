@@ -2497,7 +2497,7 @@ border-radius: 50px;
 	background-color:#eee !important;
 }
 input::placeholder {
-  color: red;
+  color: #fff;
 }
 textarea::placeholder {
   color: red;
