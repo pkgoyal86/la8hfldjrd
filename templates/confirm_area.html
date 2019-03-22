@@ -1,0 +1,86 @@
+<ion-view view-title="Confirm Area" >
+	
+  <ion-content class="globebg">
+      <div >
+			<div ng-include="'templates/top_menu.html'" ></div>		
+							
+			<div class="list card">
+				
+			 
+
+			   <div class="card">
+				
+				<div class="item item-divider">
+					Please confirm Area you are going to quote.
+					</div>
+				<table class="table table-bordered table-striped" width="100%">
+					  <tr>
+								<th>
+									Area name
+								</th>
+								<th>
+									Lenght
+								</th>
+								<th>
+									Width
+								</th>
+								<th>
+									Should Calculate
+								</th>
+							</tr>
+							<tbody>
+								<tr ng-repeat="value in Area.Area">
+									<th>
+										{{value.area_name}}
+									</th>
+									<th>
+										{{value.lenght}}
+									</th>
+									<th>
+										{{value.width}}
+									</th>
+									<th>
+										<span ng-if="value.calculate == true">Yes</span>
+										<span ng-if="value.calculate != true">No</span>
+										
+										
+									</th>
+									
+								</tr>
+							
+					  </tbody>
+					  </table>
+				
+				
+				
+				
+				
+				
+				
+			  </div>
+			  
+			  
+				
+			 
+			  
+			  
+			   
+			  <div class="item item-body" >
+				
+					<div class='button-bar'>
+					  <a class='button button-energized' ng-click='back1()'>Back</a>
+					  <a class='button button-balanced' ng-click='continue1()'>Continue</a>
+				  </div>
+				
+				
+			  </div>
+			  
+			 
+			  
+			  
+			</div>
+				
+		</div>	
+	
+  </ion-content>
+</ion-view>

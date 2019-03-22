@@ -210,7 +210,7 @@ angular.module('starter.controllers').controller('QuoteStep3Ctrl', function($roo
 				$ionicLoading.hide();
 				if(req_response.data.message == "success"){	
 					//return false;
-					$state.go('app.quote_step_4');
+					$state.go('app.confirm_area');
 
 				}else if(req_response.data.message == "failed"){
 						var alertPopup = $ionicPopup.alert({

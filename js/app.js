@@ -329,6 +329,17 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         }
       }
     })
+	
+	.state('app.confirm_area', {
+      url: '/confirm_area',
+	   cache: false,
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/confirm_area.html',
+          controller: 'confirmAreaCtrl'
+        }
+      }
+    })
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
